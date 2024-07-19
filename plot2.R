@@ -1,4 +1,14 @@
+## Get the data
 
+powerData<-download.file("https://archive.ics.uci.edu/static/public/235/individual+household+electric+power+consumption.zip","powerData.zip")
+
+unzip(zipfile="powerData.zip",exdir="C:/Users/ciano/OneDrive/Documents/Coursera_DS_Course/DS_Exploratoy_Data_Analysis/EDA-Week-1-Project")
+
+powerData<-read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings="?")
+
+## Subset correct dates
+
+First_Feb_2007<- powerData[powerData$Date %in% c("1/2/2007", "2/2/2007"),]
 
 ## Plot 2: Linegraph of Global Active Power and Time
 
